@@ -1,10 +1,9 @@
 using System;
+//https://www.w3schools.com/cs/cs_foreach_loop.php
 
-class Program
+public class Menu
 {
-    static void Main(string[] args)
-    {
-
+    //I messed something up overhere
     public List<string> _options = new List<string>
     {
     "1. Write", "2. Display", "3. Save", "4. Load", "5. Quit"
@@ -22,19 +21,19 @@ class Program
             string input = Console.ReadLine();
             if (input == "1" || input == "Write")
             {
-                Entry write = new Entry.NewEntry();
+                //Entry.NewEntry
             }
             else if (input == "2" || input == "Display")
             {
-                string[] display = Journal.Display;
+                //Entry.DisplayEntry
             }
             else if (input == "3" || input == "Save")
             {
-                Journal.Save
+                //Entry.SaveEntry
             }
             else if (input == "4" || input == "Load")
             {
-                Journal.Load
+                //Entry.Loadentry
             }
             else if (input == "5" || input == "Quit")
             {
@@ -46,5 +45,6 @@ class Program
             }
         }
         while (run == true);
-    }
+    //while true run the menu
+}
 }
