@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class Prompt
 {
+    public string _myPrompt;
     List<string> _prompt = new List<string>
     {
         "Who did I see today?",
@@ -19,6 +20,6 @@ public class Prompt
     {
         Random randomPrompt = new Random();
         int index = randomPrompt.Next(0, _prompt.Count);
-        string prompt = _prompt[index];
+        _myPrompt = _prompt[index];
     }
 }
