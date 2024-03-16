@@ -1,7 +1,10 @@
 using System;
-
+using System.IO;
+using System.Collections.Generic;
 class Program
 {
+    static void Main(string[] args)
+    {
     public List<string> entries = new List<string>
     {
 
@@ -13,6 +16,7 @@ class Program
 
     public void MainMenu()
     {
+
         bool run = true;
         do
         {
@@ -47,15 +51,39 @@ class Program
             }
             else if (input == "3" || input == "Save")
             {
-
+                string filename = "journal.txt";
+                using (StreamWriter output = new StreamWriter(filename))
+                {
+                    Console.WriteLine("Saving to file...");
+                    foreach (string item in entries)
+                    {
+                        output.WriteLine(item);
+                    };
+                }
             }
             else if (input == "4" || input == "Load")
             {
+                string filename = "myFile.txt";
+                string[] lines = System.IO.File.ReadAllLines(filename);
 
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split("&&");
+
+                    string theDate = parts[0];
+                    string thePrompt = parts[1];
+                    string theEntry = parts[2];
+                    string theWordcount = parts[3];
+                    Console.WriteLine(theDate);
+                    Console.WriteLine(thePrompt);
+                    Console.WriteLine(theEntry);
+                    Console.WriteLine(theWordcount);
+                }
             }
             else if (input == "5" || input == "Quit")
             {
-
+                Console.WriteLine("Come back soon!");
+                run = false;
             }
             else
             {
@@ -64,4 +92,5 @@ class Program
         }
         while (run == true);
     }
+}
 }

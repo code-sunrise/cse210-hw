@@ -20,7 +20,7 @@ public class Entry
   {
     string[] words = _currentEntry.Split(" ");
     int _wordCount = words.Length;
-    string _compiledData = $"Date: {_date}&&Prompt: {_currentPrompt}&&{_currentEntry}&&{_wordCount}";
+    string _compiledData = $"Date: {_date}&&Prompt: {_currentPrompt}&&{_currentEntry}&&Wordcount: {_wordCount}";
     return _compiledData;
   }
 }
