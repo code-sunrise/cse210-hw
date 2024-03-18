@@ -3,8 +3,6 @@ using System.IO;
 using System.Collections.Generic;
 class Program
 {
-    static void Main(string[] args)
-    {
     public List<string> entries = new List<string>
     {
 
@@ -92,5 +90,4 @@ class Program
         }
         while (run == true);
     }
-}
 }
