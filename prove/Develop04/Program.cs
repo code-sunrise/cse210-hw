@@ -1,10 +1,9 @@
 using System;
-
 class Program
 {
     static void Main(string[] args)
     {
-        //test
+        //initialize
 
 
         bool displayMenu = true;
@@ -25,6 +24,7 @@ class Program
         {
             case "1":
             //breathing
+            //ask for duration and then use that to initialize the exercise!
             return true;
             case "2":
             //reflection
