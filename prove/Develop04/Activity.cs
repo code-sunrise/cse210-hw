@@ -2,9 +2,9 @@ using System;
 public class Activity
 {
     //attributes
-    string _name;
-    string _description;
-    int _duration;
+    protected string _name;
+    protected string _description;
+    protected int _duration;
     //constructors
     Activity(string name, string description, int duration)
     {
