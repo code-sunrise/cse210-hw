@@ -6,11 +6,11 @@ public class Activity
     protected string _description;
     protected int _duration;
     //constructors
-    Activity(string name, string description, int duration)
+    public Activity()
     {
-        _name = name;
-        _description = description;
-        _duration = duration;
+        _name = "Default";
+        _description = "You have encountered and error if you are seeing this message.";
+        _duration = 10;
     }
     //methods
     public void DisplayStart()
@@ -21,20 +21,32 @@ public class Activity
         and pause for several seconds.*/
         Console.WriteLine($"{_name}");
         Console.WriteLine($"{_description}");
-        Console.WriteLine($"Durationi: {_duration}");
+        Console.WriteLine("How long would you like your session? (seconds)");
+        string result = Console.ReadLine();
+        _duration = int.Parse(result);
     }
     public void DisplayEnd()
     {
-        Console.WriteLine("!");
+        Console.WriteLine($"You completed the {_name} activity for {_duration} seconds!");
     }
     public void ShowSpinner()
     {
-        Console.WriteLine("Activity starting in...");
-        DateTime currentTime = DateTime.Now;
-        DateTime spinnerTime = currentTime.AddSeconds(5);
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(5);
+        for (int i = 1; i <= 100; i += 4)
+        {
+            Console.Write($"Loading... {i}%");
+            Thread.Sleep(100);
+            /* Thread.Sleep(3000);
+
+             DateTime currentTime = DateTime.Now;
+             if (currentTime < futureTime)
+             {
+                 Console.WriteLine("Loading....");
+             }*/
+        }}
+        /*public void ShowCount()
+        {
+            //have countdown
+        }*/
     }
-    public void ShowCount()
-    {
-        //have countdown
-    }
-}

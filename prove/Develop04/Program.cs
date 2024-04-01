@@ -1,9 +1,14 @@
 using System;
 class Program
+//https://stackoverflow.com/questions/6191576/seconds-countdown-timer
 {
     static void Main(string[] args)
     {
-        //initialize
+        //testing zone
+        Activity test = new Activity();
+        test.DisplayStart();
+        test.ShowSpinner();
+        test.DisplayEnd();
 
 
         bool displayMenu = true;
@@ -24,13 +29,18 @@ class Program
         {
             case "1":
             //breathing
-            //ask for duration and then use that to initialize the exercise!
+            Breathe breathing = new Breathe();
+            breathing.Run();
             return true;
             case "2":
             //reflection
+            Reflect reflection = new Reflect();
+            reflection.Run();
             return true;
             case "3":
             //listing
+            List listing = new List();
+            listing.Run();
             return true;
             case "4":
             //quit
