@@ -5,10 +5,10 @@ class Program
     static void Main(string[] args)
     {
         //testing zone
-        Activity test = new Activity();
+        /*Activity test = new Activity();
         test.DisplayStart();
         test.ShowSpinner();
-        test.DisplayEnd();
+        test.DisplayEnd();*/
 
 
         bool displayMenu = true;
