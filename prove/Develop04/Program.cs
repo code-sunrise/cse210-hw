@@ -4,13 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        //testing zone
-        /*Activity test = new Activity();
-        test.DisplayStart();
-        test.ShowSpinner();
-        test.DisplayEnd();*/
-
-
         bool displayMenu = true;
         while (displayMenu)
         {
@@ -25,7 +18,7 @@ class Program
         Console.WriteLine("3 - Listing activity");
         Console.WriteLine("4 - Quit the program");
         string result = Console.ReadLine();
-        switch (result)
+        switch (result)//
         {
             case "1":
             //breathing

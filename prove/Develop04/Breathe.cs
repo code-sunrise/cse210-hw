@@ -4,27 +4,41 @@ public class Breathe : Activity
 {
     //attributes NA
     //constructors
-    public void BreathingActivity()
+    public Breathe()
     {
+        _name = "Breathe";
         _description = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
-        int breaths = (int)Math.Ceiling(_duration / 12.0);
-        //round the total i guess
-        for(int i = breaths; i > 0; --i) //this is wrong
-        {
-            Console.WriteLine("Deep breath in)");
-            //five second timer
-            Console.WriteLine("Deep breath out");
-            //eight second timer
-        }
+
     }
     //methods
     public void Run()
     {
         //access the :base elements to run the program
         DisplayStart(); /* 1. The activity should begin with the standard starting message
-and prompt for the duration that is used by all activities.*/
+        and prompt for the duration that is used by all activities.*/
         ShowSpinner();
-        BreathingActivity();
+        int breaths = (int)Math.Ceiling(_duration / 12.0);
+        //round the total i guess
+        for (int i = breaths; i > 0; --i) //this is wrong
+        {
+            //five second timer
+            Console.WriteLine("Deep breath in...");
+            for (int j = 5; j > 0; j--)
+            {
+                Console.Write($"\b\b{j}");
+                Thread.Sleep(1000);
+            }
+
+            //seven second timer
+            Console.WriteLine(" ");
+            Console.WriteLine("Deep breath out...");
+            for (int k = 7; k > 0; k--)
+            {
+                Console.Write($"\b\b{k}");
+                Thread.Sleep(1000);
+            }
+            Console.WriteLine(" ");
+        }
         DisplayEnd();
     }
 }

@@ -20,7 +20,6 @@ class Program
         {
             Console.WriteLine($"{item.GetColor}");
             Console.WriteLine($"{item.GetArea}");
-
         }
 
     }

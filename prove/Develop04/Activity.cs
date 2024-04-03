@@ -18,7 +18,7 @@ public class Activity
         /*Each activity should start with a common starting message that provides
         the name of the activity, a description, and asks for and sets the duration
         of the activity in seconds. Then, it should tell the user to prepare to begin
-        and pause for several seconds.*/
+        and pause for several seconds*/
         Console.WriteLine($"{_name}");
         Console.WriteLine($"{_description}");
         Console.WriteLine("How long would you like your session? (seconds)");
@@ -32,21 +32,30 @@ public class Activity
     public void ShowSpinner()
     {
         DateTime startTime = DateTime.Now;
-        DateTime futureTime = startTime.AddSeconds(5);
-        for (int i = 1; i <= 100; i += 4)
+        DateTime futureTime = startTime.AddSeconds(3);
+        for (int i = 3; i >= 0; i--)
         {
-            Console.Write($"Loading... {i}%");
-            Thread.Sleep(100);
-            /* Thread.Sleep(3000);
-
-             DateTime currentTime = DateTime.Now;
-             if (currentTime < futureTime)
-             {
-                 Console.WriteLine("Loading....");
-             }*/
-        }}
-        /*public void ShowCount()
-        {
-            //have countdown
-        }*/
+            if (startTime < futureTime)
+            {
+                Console.Write($"\b\b{i}");
+                //Console.Write($"{i}");
+                Thread.Sleep(1000);
+            }
+        }
     }
+    public void ShowCount()
+    {
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(_duration);
+        Console.Write($"Loading... ");
+        for (int i = _duration; i >= 0; i--)
+        {
+            if (startTime < futureTime)
+            {
+                Console.Write($"\b\b{i}");
+                //Console.Write($"{i}");
+                Thread.Sleep(1000);
+            }
+        }
+    }
+}
