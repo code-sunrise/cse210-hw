@@ -1,14 +1,14 @@
 using System;
-using System.ComponentModel;
 
-public class EternalGoal : Goal
+public class SimpleGoal : Goal
 {
-    //attributes - inherited
+    //attributes
+    private bool _isComplete;
 
     //constructor
-    EternalGoal(string title, string description, int points) : base(title, description, points)
+    public SimpleGoal(string title, string description, int points) : base(title, description, points)
     {
-        //default message
+        
     }
 
     //methods

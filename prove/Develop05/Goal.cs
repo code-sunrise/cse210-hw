@@ -6,19 +6,21 @@ public class Goal
     //attributes
     string _title;
     string _description;
-    string _points;
+    int _points;
 
     //constructors
-    public Goal(string name, string description, string points)
+    public Goal(string title, string description, int points)
     {
-
+        _title = title;
+        _description = description;
+        _points = points;
     }
 
     //methods
-    public void RecordEvent()
+    public virtual void RecordEvent()
     {}
 
-    public bool IsComplete()
+    public virtual bool IsComplete()
     {
         return true;
     }
@@ -26,7 +28,7 @@ public class Goal
     {
         return " ";
     }
-    public string GetStringRepresentation()
+    public virtual string GetStringRepresentation()
     {
         return " ";
     }
