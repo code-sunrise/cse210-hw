@@ -1,38 +1,40 @@
 using System;
-using System.Xml.Linq;
-
 class Program
 {
     static void Main(string[] args)
     {
-        bool displayMenu = true;
-        while (displayMenu)
-        {
-            displayMenu = MainMenu();
-        }
-    }
-    private static bool MainMenu()
-    {
-        Console.WriteLine("menu options here");
-        string result = Console.ReadLine();
-        switch (result)//
-        {
-            case "1":
-            return true;
-            case "2":
-            return true;
-            case "3":
-            return true;
-            case "4":
-            //quit
-            return false;
-            default:
-            Console.WriteLine("Please enter a valid option.");
-            return true;
-        }
+        //test
+        Potion cure = new Potion("Cure", "Heals the sick");
 
     }
 }
+
+
+/*bool displayMenu = true;
+while (displayMenu)
+{
+    displayMenu = MainMenu();
+}
+}
+private static bool MainMenu()
+{
+Console.WriteLine("menu options here");
+string result = Console.ReadLine();
+switch (result)//
+{
+    case "1":
+    return true;
+    case "2":
+    return true;
+    case "3":
+    return true;
+    case "4":
+    //quit
+    return false;
+    default:
+    Console.WriteLine("Please enter a valid option.");
+    return true;
+}*/
 // menu create new goal, list goals, save goals, load goals, record event, quit
 // new goal, menu simple, eternal, or checklist goal
 // enter goal name

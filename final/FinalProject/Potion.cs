@@ -1,26 +1,38 @@
 using System;
 using System.Collections.Generic;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime;
+
 //child of component class
 
 public class Potion : Component
 {
     //attributes
-    string _strength;
-    List<string> _strengths;
+    protected string _name;
+    protected string _description;
+    int _strength = 0;
+    List<string> _strengths = new List<string>
+    {
+        "1",
+        "2",
+        "3",
+        "4 MAX"
+    };
     int _amount;
 
     //constructors
+    public Potion(string name, string description) : base(name, description)
+    {
+        _strength = 0;
+        _amount = 0;
+    }
 
     //methods
     public string GetStrength()
     {
-        return " ";
+        return $"{_strength}";
     }
     public void SetStrength(int lessonLevel)
     {
-        _strength = _strengths[lessonLevel];
+        _strength = lessonLevel;
     }
     public int GetAmount()
     {
@@ -31,4 +43,8 @@ public class Potion : Component
         _amount = amount;
         //if modify = -, subtract amount, if modify = +, add amount to _amount;
     }
+    /*public override string Display()
+    {
+        return $"test";
+    }*/
 }
