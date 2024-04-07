@@ -8,19 +8,27 @@ public class SimpleGoal : Goal
     //constructor
     public SimpleGoal(string title, string description, int points) : base(title, description, points)
     {
-        
+        _isComplete = false;
     }
 
     //methods
     public override void RecordEvent()
-    {}
+    {
+        _isComplete = true;
+    }
 
     public override bool IsComplete()
     {
-        return true;
+        return _isComplete;
     }
     public override string GetStringRepresentation()
     {
-        return " ";
+        string box = "&&o";
+        if(_isComplete == true)
+        {
+            box = "&&x";
+        }
+        string display = $"{_title}&&{_description}&&Points: {_points}{box}";
+        return display;
     }
 }

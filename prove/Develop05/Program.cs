@@ -3,38 +3,54 @@ class Program
 {
     static void Main(string[] args)
     {
-        //test
-        Potion cure = new Potion("Cure", "Heals the sick");
-
+        SimpleGoal goal = new SimpleGoal("eat", "have food", 100);
+        Console.WriteLine(goal.GetStringRepresentation());
+        /*bool displayMenu = true;
+        Console.WriteLine("Welcome to the Eternal Quest goal tracker!");
+        while (displayMenu)
+        {
+            displayMenu = MainMenu();
+        }*/
     }
+    /*private static bool MainMenu()
+    {
+        Console.WriteLine("Choose one option");
+        Console.WriteLine("1. Create new goal");
+        Console.WriteLine("2. List Goals");
+        Console.WriteLine("3. Save Goals");
+        Console.WriteLine("4. Load Goals");
+        Console.WriteLine("5. Record Event");
+        Console.WriteLine("6. Quit");
+        string result = Console.ReadLine();
+        switch (result)//
+        {
+            case "1":
+                //simple goal if this then this points
+                Console.WriteLine("Select what king of goal you'd like:");
+                Console.WriteLine("Simple Goal");
+                Console.WriteLine("Eternal Goal");
+                Console.WriteLine("Checklist Goal");
+                return true;
+            case "2":
+                //eternal goal, each time marked, this many points
+                return true;
+            case "3":
+                //checklist goal, # of instances, # of points, bonus for total completion
+                return true;
+            case "4":
+                //save
+                return true;
+            case "5":
+                // load
+                return true;
+            case "6":
+                return false;
+            default:
+                Console.WriteLine("Please enter a valid option.");
+                return true;
+        }
+    }*/
 }
-
-
-/*bool displayMenu = true;
-while (displayMenu)
-{
-    displayMenu = MainMenu();
-}
-}
-private static bool MainMenu()
-{
-Console.WriteLine("menu options here");
-string result = Console.ReadLine();
-switch (result)//
-{
-    case "1":
-    return true;
-    case "2":
-    return true;
-    case "3":
-    return true;
-    case "4":
-    //quit
-    return false;
-    default:
-    Console.WriteLine("Please enter a valid option.");
-    return true;
-}*/
 // menu create new goal, list goals, save goals, load goals, record event, quit
 // new goal, menu simple, eternal, or checklist goal
 // enter goal name

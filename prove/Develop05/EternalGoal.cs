@@ -8,7 +8,7 @@ public class EternalGoal : Goal
     //constructor
     EternalGoal(string title, string description, int points) : base(title, description, points)
     {
-        //default message
+        //default message 
     }
 
     //methods

@@ -12,4 +12,8 @@ public class Component
         _name = name;
         _description = description;
     }
+    public virtual string Display()
+    {
+        return "";
+    }
 }

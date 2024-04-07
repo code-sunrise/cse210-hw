@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class Potion : Component
 {
     //attributes
+    //these attributes dont belong here anymore unless id elete component, which i might
     protected string _name;
     protected string _description;
     int _strength = 0;
@@ -19,6 +20,7 @@ public class Potion : Component
     int _amount;
 
     //constructors
+
     public Potion(string name, string description) : base(name, description)
     {
         _strength = 0;
@@ -43,8 +45,9 @@ public class Potion : Component
         _amount = amount;
         //if modify = -, subtract amount, if modify = +, add amount to _amount;
     }
-    /*public override string Display()
+    public override string Display()
     {
-        return $"test";
-    }*/
+        string display = $"Testing!! {_name} {_description} {_amount}, {_strength}";
+        return display;
+    }
 }

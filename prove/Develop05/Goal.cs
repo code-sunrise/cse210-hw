@@ -3,10 +3,10 @@ using System.ComponentModel;
 
 public class Goal
 {
-    //attributes
-    string _title;
-    string _description;
-    int _points;
+    //attributes 
+    protected string _title;
+    protected string _description;
+    protected int _points;
 
     //constructors
     public Goal(string title, string description, int points)
@@ -18,11 +18,12 @@ public class Goal
 
     //methods
     public virtual void RecordEvent()
-    {}
+    {
+    }
 
     public virtual bool IsComplete()
     {
-        return true;
+        return false;
     }
     public string GetDetailsString()
     {
@@ -30,6 +31,6 @@ public class Goal
     }
     public virtual string GetStringRepresentation()
     {
-        return " ";
+        return "test";
     }
 }

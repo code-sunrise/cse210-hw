@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class GoalManager
 {
-    //attributes
+    //attributes 
     private List<Goal> _goals;
     private int _score;
 
