@@ -1,53 +1,44 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 //child of component class
 
 public class Potion : Component
 {
     //attributes
-    //these attributes dont belong here anymore unless id elete component, which i might
-    protected string _name;
-    protected string _description;
-    int _strength = 0;
-    List<string> _strengths = new List<string>
-    {
-        "1",
-        "2",
-        "3",
-        "4 MAX"
-    };
-    int _amount;
+    private int _strength = 0;
+    // i added this to the component class int _amount;
+    private int _value;
 
     //constructors
 
     public Potion(string name, string description) : base(name, description)
     {
         _strength = 0;
+        _value = 8;
+    }
+    //methods
+    public void Brew()
+    {
+        int brew = _strength * 2 + 6;
+        _amount += brew;
+    }
+    public int Sell()
+    {
+        int income = _value * _amount;
         _amount = 0;
+        return income;
+    }
+    public void Lesson()
+    {
+        _value =+ 5;
+        _strength =+ 1;
     }
 
-    //methods
-    public string GetStrength()
-    {
-        return $"{_strength}";
-    }
-    public void SetStrength(int lessonLevel)
-    {
-        _strength = lessonLevel;
-    }
-    public int GetAmount()
-    {
-        return 0;
-    }
-    public void SetAmount(string modify, int amount)
-    {
-        _amount = amount;
-        //if modify = -, subtract amount, if modify = +, add amount to _amount;
-    }
     public override string Display()
     {
-        string display = $"Testing!! {_name} {_description} {_amount}, {_strength}";
+        string display = $"Testing!! {_name} {_description} {_amount}, {_strength}, {_value}";
         return display;
     }
 }

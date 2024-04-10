@@ -1,0 +1,9 @@
+I have completed setting up all of the classes for my open ended project making a potion game.
+I'm hoping to hop on with a tutor to make sure I get the inheritance and polymorphism parts done
+because I encountered some issues and questions
+I set up a case switch and then commented it out so I could test some things and 
+I wrote a comment about the general flow of the program
+The parent class for the inheritance/polymorphism asignment is the component class,
+which includes basic information and a display method that can be polymorphed for each child.
+I think i deleted the syntax for the component on the potion while I was testing the class
+I'm not sure if the GameManager and the Inventory i make will be different classses or if I will combine them

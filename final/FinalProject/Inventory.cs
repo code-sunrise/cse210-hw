@@ -1,20 +1,21 @@
 using System;
 
-/*public class Inventory : Component
+public class Inventory : Component
 {
     //attributes
     int _money;
 
     //constructors
-    public Inventory(string name, string description): base(name, description);
+    public Inventory(string name, string description): base(name, description)
     {
-
+        _money = 25;
     }
 
     //methods
-    public override string GetString()
+    public override string Display()
     {
         //change output
-        return " ";
+        string display = ("Inventory");
+        return display;
     }
-}*/
+}

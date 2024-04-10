@@ -1,53 +1,35 @@
 using System;
 using System.ComponentModel;
+using System.Collections.Generic;
 
 //child of component class
 
-public class Challenge
+public class Challenge : Component
 {
     //attributes
-    string _name;
-    string _description;
-    private int _amount;
-    private int _turn;
-    private List<string> names = new List<string>
-    {
-        "Stop a monster!",
-        "Cater a wedding!",
-        "Cure the village!"
-    };
-    private List<string> descriptions = new List<string>
-    {
-        "Help the heroes create a poison that will help them defeat the beast nesting near our home! We need {amount} bottles of poison to beat it.",
-        "The lord of the village knows you make the best fizzy punch. He has requested you provide {amount}} for his wedding.",
-        "Ye gads, a strange illness is spreading through the city! {amount} villagers need a cure."
-    };
+    int _potionIndex;
+    int _target;
 
     //constructors
-    public Challenge()
+    public Challenge(string name, string description, int potionIndex) : base(name, description)
     {
-        _turn = 0;
-        _amount = 3;
-        _name = "weebo monster";
-        _description = "A lame monster for testing potions on";
-        /*pick a random number that corresponds with the .length of the names list
-        and then use that to get the description as well*/
+        Random randTarget = new Random();
+        _amount = randTarget.Next(9);
+        _amount += 20;
+        _potionIndex = potionIndex;
+        Random randTurns = new Random();
+        _target = randTurns.Next(6);
+        _target += 4;
     }
 
     //methods
-    
-    /*public override string Display()
-    {
-        //change output
-        return " ";
-    }*/
     public int GetTurns()
     {
-        //fix this output
-        return 0;
+        return _target;
     }
-    public void SetTurns(int turn)
+    public override string Display()
     {
-        _turn = turn;
+        //change output
+        return $"{base._description} You need {base._amount} of potions to complete the {base._name} this challenge.";
     }
 }
