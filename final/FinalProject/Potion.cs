@@ -15,13 +15,14 @@ public class Potion : Component
 
     public Potion(string name, string description) : base(name, description)
     {
+        _amount = 2;
         _strength = 0;
         _value = 8;
     }
     //methods
     public void Brew()
     {
-        int brew = _strength * 2 + 6;
+        int brew = (_strength * 2) + 6;
         _amount += brew;
     }
     public int Sell()
@@ -32,13 +33,13 @@ public class Potion : Component
     }
     public void Lesson()
     {
-        _value =+ 5;
+        _value += 5;
         _strength =+ 1;
     }
 
     public override string Display()
     {
-        string display = $"Testing!! {_name} {_description} {_amount}, {_strength}, {_value}";
+        string display = $"Type: {_name}\n{_description}\nYou have {_amount} in your stock.\nLevel: {_strength}          Worth: {_value} gold";
         return display;
     }
 }

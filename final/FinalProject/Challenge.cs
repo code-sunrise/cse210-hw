@@ -9,6 +9,7 @@ public class Challenge : Component
     //attributes
     int _potionIndex;
     int _target;
+    bool _complete;
 
     //constructors
     public Challenge(string name, string description, int potionIndex) : base(name, description)
@@ -20,6 +21,7 @@ public class Challenge : Component
         Random randTurns = new Random();
         _target = randTurns.Next(6);
         _target += 4;
+        _complete = false;
     }
 
     //methods
@@ -27,9 +29,16 @@ public class Challenge : Component
     {
         return _target;
     }
+    public void SetComplete()
+    {
+        _complete = true;
+    }
+    public bool GetComplete()
+    {
+        return _complete;
+    }
     public override string Display()
     {
-        //change output
-        return $"{base._description} You need {base._amount} of potions to complete the {base._name} this challenge.";
+        return $"Challenge: {base._name}\n{base._description}\nYou need {base._amount} of potions to succeed.\nYou have {_target} turns";
     }
 }
